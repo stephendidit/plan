@@ -13,9 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
+  username: <%=ENV['C9_USER']%>
   password:
-  host: localhost
+  host: <%=ENV['IP']%>
 
 development:
   <<: *default
