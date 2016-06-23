@@ -1,0 +1,17 @@
+<% most_recent = 0
+
+# Checks feed to see what's the most recent record timestamp
+@syndications.each do |s|
+    if s.created_at.to_i > most_recent
+        most_recent = s.created_at.to_i
+    end
+end
+
+# Print the body if it matches category, is not an old feed, has most recent timestamp
+@syndications.each do |s|
+    if (s.name == "tour_slides_descriptions.txt") &&
+       (s.body.downcase != "old feed") &&
+       (s.created_at.to_i == most_recent) %> 
+        <%= s.body %>
+<%  end 
+end %>
