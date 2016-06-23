@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  root 'syndication#tour_urls'
+
   get 'syndication/tour_urls'
 
   get 'syndication/tour_slides_descriptions'
